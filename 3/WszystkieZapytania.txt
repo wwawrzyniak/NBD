@@ -19,7 +19,6 @@ CREATE (Joe:Person {name:'Joe Johnston', born:1950})
 
 
 CREATE
-    (Hugo)-[:ACTED_IN {roles:['Red Skull']}]->(CapitanAmerica),
     (Chris)-[:ACTED_IN {roles:['Capitan America']}]->(CapitanAmerica),
     (Samuel)-[:ACTED_IN {roles:['Nick Fury']}]->(CapitanAmerica),
     (Hayley)-[:ACTED_IN {roles:['Peggy Carter']}]->(CapitanAmerica),
