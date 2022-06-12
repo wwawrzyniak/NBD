@@ -29,7 +29,7 @@ curl -i -XGET  http://localhost:8098/buckets/s19515/keys/abc
 8.
 curl -i -XPOST -H "Content-Type: application/json" -d '{"store":"zabka"}' http://localhost:8098/buckets/s19515/keys/
 
-9. //todo
+9. 
 curl -i http://localhost:8098/buckets/s19515/keys?keys=true
 curl -i http://localhost:8098/buckets/s19515/keys/PcFH4mRWIBVSTWG7ERIeLnTKdVy
 
