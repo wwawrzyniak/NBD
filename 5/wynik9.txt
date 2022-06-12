@@ -1,0 +1,21 @@
+HTTP/1.1 200 OK
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Date: Sun, 12 Jun 2022 08:36:35 GMT
+Content-Type: application/json
+Content-Length: 109
+
+{"keys":["PcFH4mRWIBVSTWG7ERIeLnTKdVy","auchan","biedronka","lidl","kaufland"]}
+
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8+xkWvrduKfgCEUpkzGNlqFSUusOXBQA=
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s19515>; rel="up"
+Last-Modified: Sun, 12 Jun 2022 08:36:09 GMT
+ETag: "6o38G0sOmUyxN8VApJbiEu"
+Date: Sun, 12 Jun 2022 08:40:14 GMT
+Content-Type: application/json
+Content-Length: 17
+
+{"store":"zabka"}

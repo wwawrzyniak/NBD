@@ -1,0 +1,37 @@
+1.
+curl -i -XPUT -H "Content-Type: application/json" -d '{"store": "biedronka","name": "apple", "price": 2, "tasty": true}' http://localhost:8098/buckets/s19515/keys/biedronka
+curl -i -XPUT -H "Content-Type: application/json" -d '{"store":"lidl","name":"apple", "price":3.39, "tasty":false}' http://localhost:8098/buckets/s19515/keys/lidl
+curl -i -XPUT -H "Content-Type: application/json" -d '{"store":"auchan","name":"apple", "price":3.29, "tasty":true}' http://localhost:8098/buckets/s19515/keys/auchan
+curl -i -XPUT -H "Content-Type: application/json" -d '{"store":"kaufland","name":"apple", "price":3.79, "tasty":true}' http://localhost:8098/buckets/s19515/keys/kaufland
+curl -i -XPUT -H "Content-Type: application/json" -d '{"store":"tesco","name":"apple", "price":3.99, "tasty":false}' http://localhost:8098/buckets/s19515/keys/tesco
+
+
+2.
+curl -i -XGET  http://localhost:8098/buckets/s19515/keys/biedronka
+
+
+3.
+curl -i -XPUT -H "Content-Type: application/json" -d '{"store": "biedronka","name": "apple", "price": 2, "tasty": true, "color":"red"}' http://localhost:8098/buckets/s19515/keys/biedronka
+
+
+4.
+curl -i -XPUT -H "Content-Type: application/json" -d '{"store":"lidl","name":"apple", "price":3.39}' http://localhost:8098/buckets/s19515/keys/lidl
+
+5.
+curl -i -XPUT -H "Content-Type: application/json" -d '{"store":"auchan","name":"apple", "price":3.00, "tasty":true}' http://localhost:8098/buckets/s19515/keys/auchan
+
+6.
+curl -i -XDELETE  http://localhost:8098/buckets/s19515/keys/tesco
+
+7.
+curl -i -XGET  http://localhost:8098/buckets/s19515/keys/abc
+
+8.
+curl -i -XPOST -H "Content-Type: application/json" -d '{"store":"zabka"}' http://localhost:8098/buckets/s19515/keys/
+
+9. //todo
+curl -i http://localhost:8098/buckets/s19515/keys?keys=true
+curl -i http://localhost:8098/buckets/s19515/keys/PcFH4mRWIBVSTWG7ERIeLnTKdVy
+
+10.
+curl -XDELETE -i http://localhost:8098/buckets/s19515/keys/PcFH4mRWIBVSTWG7ERIeLnTKdVy

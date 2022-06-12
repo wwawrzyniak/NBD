@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8+xkWvrduU2OCCCUy5rEybJaXusOXBQA=
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s19515>; rel="up"
+Last-Modified: Sun, 12 Jun 2022 08:28:35 GMT
+ETag: "4ahjiTywAIdfuQzgBF581"
+Date: Sun, 12 Jun 2022 08:30:35 GMT
+Content-Type: application/json
+Content-Length: 65
+
+{"store": "biedronka","name": "apple", "price": 2, "tasty": true}
