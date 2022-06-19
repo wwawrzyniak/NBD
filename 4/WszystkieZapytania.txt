@@ -1,0 +1,49 @@
+1.  match p=allShortestPaths(
+        (Darjeeling:town {name:"Darjeeling"})-[*]->(Sandakphu:peak {name:"Sandakphu"})) 
+    RETURN p
+2.  match p=allShortestPaths(
+        (Darjeeling:town {name:"Darjeeling"})-[*]->(Sandakphu:peak {name:"Sandakphu"})) 
+        WHERE ALL(r in relationships(p) WHERE r.winter="true" ) 
+    RETURN p
+
+3. match p=(Darjeeling:town {name:"Darjeeling"})-[rel*]->(Sandakphu:peak {name:"Sandakphu"})
+RETURN p, [r IN relationships(p) | r.name + " - " + type(r)], REDUCE(d = 0, r IN rel | d + r.distance) AS distances
+ORDER BY distances
+
+//no results
+4.match p = (Darjeeling:town {name:"Darjeeling"})-[r:twowheeler]->(anotherPlace)
+WHERE ALL(r in relationships(p) WHERE r.summer="true" ) 
+return anotherPlace 
+
+5. match (a1:Flight)-[:ORIGIN]->(a2:Airport)  return a2, COUNT(a1) as count order by count
+
+
+6. match (f1: Flight)-[:ASSIGN]-(t: Ticket)
+with f1, min(t.price) as min_ticket_price set f1.min_price = min_ticket_price
+
+match (la)<-[:ORIGIN]-(f)-[:DESTINATION]->(x:Airport)
+with la, x, min(f.min_price) as cheapest 
+create (la)-[r:CONN {chapest_price : cheapest}]->(x) 
+
+MATCH p=(la: Airport{name:"LAX"})-[r:CONN*..5]->(x: Airport) 
+with reduce(total = 0, f in relationships(p) | total + f.chapest_price) as total_price,  x
+where total_price < 3000 
+return x 
+
+//no results
+7. match p=(a1:Airport {name : 'LAX'})-[:CONN*..4]-(a2:Airport {name : 'DAY'})
+with reduce(prices =0, r in relationships(p) | prices + r.chapest_price) as prices, p
+return p order by prices
+
+//no results
+8. match p=(a1:Airport {name : 'LAX'})-[:CONN*..4]-(a2:Airport {name : 'DAY'})
+with reduce(prices =0, r in relationships(p) | prices + r.chapest_price) as prices, p
+return p order by prices asc limit 1
+
+9. MATCH (f1:Flight)-[:DESTINATION|ORIGIN]->(a1:Airport)
+RETURN f1.airline, count(distinct(a1)) as nodes order by nodes;
+
+10. match p=(a1:Airport)<-[:CONN]-(a2:Airport)<-[:CONN]-(a3:Airport)
+WHERE (a1<>a2) and (a2<>a3) and (a3<>a1)
+with reduce(prices =0, r in relationships(p) | prices + r.chapest_price) as prices, p
+return p, prices order by prices asc limit 1
