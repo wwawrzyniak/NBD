@@ -1,0 +1,9 @@
+------------------ Client object successfully created
+------------------ Store object created Store{name='Zabka', address='Matolkowa 12'}
+------------------ Zabka information now stored in Riak {namespace: {type: default, bucket: s19515}, key: zabka, options: {}, value: Store{name='Zabka', address='Matolkowa 12'}, typeReference: null, vclock: null}
+			AFTER CREATE:
+------------------ Store object successfully fetched Store{name='Zabka', address='Matolkowa 12'}
+			AFTER UPDATE:
+------------------ After update Store{name='Zabka', address='Kolorowa 111'}
+			AFTER DELETE:
+------------------ After delete null
